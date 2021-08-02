@@ -1,0 +1,15 @@
+{
+    "auto": "",
+    "prefix": ";",
+    "owner": "439076109678805004",
+    "bot_status": ";help | DM for modmail",
+    "PRIMARY_COLOR": "#f6eb16",
+    "SECONDARY_COLOR": "#ed2224",
+    "KAUSER_COLOR": "#777",
+    "DISCORD_COLOR": "#777",
+    "KACC_GUILD_ID": 372895163279998976,
+    "UNVERIFIED_CHANNEL_ID": 380202012077457409,
+    "ROLES_AND_CHANNELS_ID": 746736014118355025,
+    "DAILYDOSE_ROLE_ID": 380731365672484875,
+    "WELCOME_MESSAGE": "**Welcome to Khan Academy Community Center**! Please provide a link to your Khan Academy profile so a moderator can verify you."
+}

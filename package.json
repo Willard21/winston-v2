@@ -1,0 +1,18 @@
+{
+  "name": "winston-v2",
+  "version": "1.0.0",
+  "description": "Discord bot + hotlist webscraping tool. Replacement for KA Hotlist Bot &amp; KA Community Bot",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "fs": "*",
+    "node-fetch": "^2.6.1",
+    "node-schedule": "^2.0.0"
+  }
+}
