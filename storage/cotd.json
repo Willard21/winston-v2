@@ -16,7 +16,7 @@
         "name": "wæl",
         "discriminator": "2022",
         "discordId": "325070981158928393",
-        "content": "i dont \\*\\*\\*\\*\\*\\* know just ping <@!325070981158928393> and tell him to make a better dailydose next time",
+        "content": "i dont \\*\\*\\*\\*\\*\\*\\* know just ping <@!325070981158928393> and tell him to make a better dailydose next time",
         "timestamp": 1627863381864
       },
       {
@@ -24,21 +24,24 @@
         "discriminator": "9485",
         "discordId": "474703610538885122",
         "content": "Tell Lego he looks submissive and breedable with no added context",
-        "timestamp": 1627863796092
+        "timestamp": 1627863796092,
+        "hidden": true
       },
       {
         "name": "Squishy",
         "discriminator": "2348",
         "discordId": "439076109678805004",
-        "content": "Make a \\*\\*\\*\\*ty ka program",
-        "timestamp": 1627867674653
+        "content": "yay",
+        "timestamp": 1627863796092,
+        "hidden": true
       },
       {
         "name": "Extex",
         "discriminator": "7377",
         "discordId": "697562265683230721",
         "content": "Choose a random server you're a member of and say \"Booga Booga\" in every channel",
-        "timestamp": 1627867903088
+        "timestamp": 1627867903088,
+        "hidden": false
       },
       {
         "name": "Squishy",
