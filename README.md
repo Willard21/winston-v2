@@ -14,9 +14,7 @@ Invite to KACC with https://discord.com/api/oauth2/authorize?client_id=???&permi
 
 Run these commmands
 
-`npm init`
-
-`npm i fs dotenv node-fetch discord.js`
+`npm i`
 
 Create .env file with the following contents:
 
@@ -26,11 +24,11 @@ Replace with your Discord bot token.
 
 Open config.json and verify the following values:
 
-  "owner": // Discord ID of bot owner
-  "KACC_GUILD_ID": // Server ID of Khan Academy Community Center
-  "UNVERIFIED_CHANNEL_ID": // Channel ID of #unverified
-  "MODERATOR_ROLE_ID": // Role ID of @Moderator
-  "DAILYDOSE_ROLE_ID": // Role ID of @Daily Dose
+  "owner": // Discord ID of bot owner<br>
+  "KACC_GUILD_ID": // Server ID of Khan Academy Community Center<br>
+  "UNVERIFIED_CHANNEL_ID": // Channel ID of #unverified<br>
+  "MODERATOR_ROLE_ID": // Role ID of @Moderator<br>
+  "DAILYDOSE_ROLE_ID": // Role ID of @Daily Dose<br>
   "WELCOME_MESSAGE": // Welcome message
 
 ### 3. Run
