@@ -35,7 +35,7 @@ Open config.json and verify the following values:
 
 ### 3. Run
 
-`node bot.js`
+`npm start`
 
 If required webhooks do not exist, this will create a webhook in every text channel.
 

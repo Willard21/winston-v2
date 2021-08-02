@@ -1,4 +1,5 @@
 config.json
+config_backup.json
 storage/.
 node_modules
 .env
