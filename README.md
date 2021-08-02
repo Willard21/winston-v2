@@ -4,7 +4,7 @@ Multi-purpose Discord bot created for the Discord server Khan Academy Community 
 
 Invite permissions # is 2952916032
 
-Invite to KACC with https://discord.com/api/oauth2/authorize?client_id=746567249011146902&permissions=2952916032&scope=bot
+Invite to KACC with https://discord.com/api/oauth2/authorize?client_id=???&permissions=2952916032&scope=bot
 
 ## Set up bot
 
