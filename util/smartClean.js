@@ -5,6 +5,8 @@ module.exports = {
     "cum",
     "testbadword",
     "bastard",
+    "bullshit",
+    "dogshit",
     "fucker",
     "lmfao",
     "dick",

@@ -83,7 +83,7 @@ function determineNextCotd(kaccGuild) {
 
   // Read content of last message sent in channel
   const channel = kaccGuild.channels.cache.find(channel => channel.name === "dailydose");
-  const messages = channel.messages.fetch({ limit: 2 }).then(messages => {
+  const messages = channel.messages.fetch({ limit: 5 }).then(messages => {
 
     // Filter out messages with embed
     const filteredMessages = messages.filter(message => !message.embeds.length)
@@ -294,6 +294,8 @@ function sendDailyDoseInAppropriateChannel() {
     // Update CotD data
     determineNextCotd(kaccGuildGlobal)
 
+    setTimeout(() => {
+
     // Find daily dose channel      
     let channel = kaccGuildGlobal.channels.cache.find(ch => ch.name === "dailydose")
     if (!channel) {
@@ -305,6 +307,8 @@ function sendDailyDoseInAppropriateChannel() {
       anyDDMessage = messages.first()
       client.commands.get('dailydose').execute(anyDDMessage, [false])
     })
+
+    }, 2000) // Wait 2 seconds in case determineNextCotd takes a while (I'm lazy)
   }
 }
 
