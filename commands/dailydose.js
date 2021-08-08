@@ -38,11 +38,15 @@ async function getDDAsync(msg, dailyDoseNumber, challengeOfTheDay="No submission
 
   // Get daily fact
   let facts = JSON.parse(fs.readFileSync("./data/facts.json", "utf8"))
-  let factPart = facts[dailyDoseNumber % facts.length]?.value||"[redacted]"
+  let factPart = facts[dailyDoseNumber % facts.length]?.value||"[error]"
 
   // Get daily quote
   let quotes = JSON.parse(fs.readFileSync("./data/thoughts.json", "utf8"))
-  let quotePart = quotes[dailyDoseNumber % quotes.length]?.value||"[redacted]"
+  let quotePart = quotes[dailyDoseNumber % quotes.length]?.value||"[error]"
+
+  // Get daily question
+  let questions = JSON.parse(fs.readFileSync("./data/questions.json", "utf8"))
+  let questionPart = questions[dailyDoseNumber % questions.length]?.value||"[error]"
 
   // Get daily challenge/joke/phobia (extra)
   let extraPart = "(error retrieving)"
@@ -130,13 +134,15 @@ async function getDDAsync(msg, dailyDoseNumber, challengeOfTheDay="No submission
   return {
     content: decodeHTML(`<@&${DAILYDOSE_ROLE_ID}> #${dailyDoseNumber}
 
-**Word of the day:** ${wordPart}
+**Word**: ${wordPart}
 
-**Fact of the day:** ${factPart}
+**Fact**: ${factPart}
 
-**Quote of the day:** ${quotePart}
+**Question**: ${questionPart}
 
-**${extraName} of the day:** ${extraPart}`),
+**Quote**: ${quotePart}
+
+**${extraName}**: ${extraPart}`),
     embed: embedPart
 
   }

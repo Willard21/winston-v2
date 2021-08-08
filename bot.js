@@ -216,6 +216,7 @@ client.on("message", (message) => {
         outWebhook.send(Discord.Util.cleanContent(clean, message), {
           username: message.author.username,
           avatarURL: message.author.avatarURL(),
+          allowMentions: false,
         }).then(() => {
           message.delete()
         })
@@ -282,8 +283,8 @@ client.on("message", (message) => {
 client.login(process.env.TOKEN);
 
 
-// Schedule daily dose prompt in #modmail at 22:00 UTC
-schedule.scheduleJob("0 22 * * *", sendDailyDoseInAppropriateChannel);
+// Schedule daily dose prompt in #modmail at 17:00 (5:00 pm) local time
+schedule.scheduleJob("0 21 * * *", sendDailyDoseInAppropriateChannel);
 
 function sendDailyDoseInAppropriateChannel() {
 
@@ -294,7 +295,7 @@ function sendDailyDoseInAppropriateChannel() {
     determineNextCotd(kaccGuildGlobal)
 
     // Find daily dose channel      
-    let channel = kaccGuildGlobal.channels.find(c => c.name == "dailydose")
+    let channel = kaccGuildGlobal.channels.cache.find(ch => ch.name === "dailydose")
     if (!channel) {
       return console.log("ERROR: I can't find the dailydose channel!")
     }
@@ -302,7 +303,7 @@ function sendDailyDoseInAppropriateChannel() {
     // Get last message and pass that in as a parameter (to send in correct channel)
     channel.messages.fetch({ limit: 1 }).then(messages => {
       anyDDMessage = messages.first()
-      client.commands.get('dailydose').execute(anyDDMessage)
+      client.commands.get('dailydose').execute(anyDDMessage, [false])
     })
   }
 }
