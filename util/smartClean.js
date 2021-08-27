@@ -9,7 +9,6 @@ module.exports = {
     "dogshit",
     "fucker",
     "lmfao",
-    "dick",
     "nigga",
     "slut",
     "cock",
@@ -27,7 +26,6 @@ module.exports = {
     "cunt",
     "retard",
     "pussy",
-    "crap",
     "cuck",
   ];
   for (let badword of badwords) {
@@ -38,7 +36,7 @@ module.exports = {
       )
     }
   }
-  content = content.replace(/\@everyone/gi, 'e v e r y o n e').replace(/\@here/gi, 'h e r e');
+  content = content.replace(/\@everyone/gi, '(everyone)').replace(/\@here/gi, '(here)');
   // Limit length
   if (content != wasContent) {
     content = content.substring(0, 2000);

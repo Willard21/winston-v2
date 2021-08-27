@@ -55,26 +55,34 @@ function initWebhooks(kaccGuild) {
     const textChannels = guild.channels.cache.filter(c => c.type=='text');
     let i = 0
     textChannels.forEach( channel => {
-      setTimeout(() => {
-              try {
-                channel.createWebhook("Winston helper", {
-                  avatar: 'https://cdn.discordapp.com/avatars/746567249011146902/0551d768c27917ae43d475c2529c1f8c.png', // So when doing this command, you must give it an image URL (Should end in .jpg, .png, etc.)
-                }).then(webhook => console.log(`Created webhook ${webhook}`))
-                
-              } catch (e) {}  
+      // If channel doesn't have a webhook, create one
+        let channelWebhooks = channel.fetchWebhooks().then(webhooks => {
+          if (webhooks.size === 0) {
 
-    }, 1000*(i++))
+          setTimeout(() => {
+                  try {
+                    channel.createWebhook("Winston helper", {
+                      avatar: 'https://cdn.discordapp.com/avatars/746567249011146902/0551d768c27917ae43d475c2529c1f8c.png', // So when doing this command, you must give it an image URL (Should end in .jpg, .png, etc.)
+                    }).then(webhook => console.log(`Created webhook ${webhook} in channel ${channel.name}`));
+                    
+                  } catch (e) {}  
+
+        }, 1000*(i++))
+
+      }
+      
+      })
     })
   }
   kaccGuild.fetchWebhooks().then(webhooks => {
     global.webhooks = webhooks
     let alreadySetUp = false
-    if (global.webhooks.some(w => w.name.includes("helper"))) {
+    if (false && global.webhooks.some(w => w.name.includes("helper"))) {// Check webhooks on every reload
       console.log("Webhooks already initialized.")
       alreadySetUp = true
     }
     if (!alreadySetUp) {
-      createWebhookEveryChannel(guild)
+      createWebhookEveryChannel(kaccGuild)
     }
   })
 }
